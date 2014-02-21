@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.usp.each.saeg</groupId>
+	<artifactId>saeg-commons</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>saeg-commons</name>
+	<url>https://github.com/saeg/saeg-commons</url>
+	<description>common utility methods</description>
+
+	<scm>
+		<url>https://github.com/saeg/saeg-commons</url>
+		<connection>scm:git:https://github.com/saeg/saeg-commons.git</connection>
+		<developerConnection>scm:git:git@github.com:saeg/saeg-commons.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/saeg/saeg-commons/issues</url>
+	</issueManagement>
+
+	<developers>
+		<developer>
+			<email>roberto.andrioli@gmail.com</email>
+			<name>Roberto Araujo</name>
+			<url>https://github.com/andrioli</url>
+			<id>andrioli</id>
+		</developer>
+	</developers>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.4.2</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+</project>
