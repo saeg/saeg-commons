@@ -35,10 +35,10 @@ import java.io.InputStream;
 
 public abstract class Stream implements Closeable {
 
-	public abstract InputStream getInputStream() throws IOException;
+    public abstract InputStream getInputStream() throws IOException;
 
-	public byte[] getBytes() throws IOException {
-		return Files.toByteArray(getInputStream());
-	}
+    public byte[] getBytes() throws IOException {
+        return Files.toByteArray(getInputStream());
+    }
 
 }

@@ -36,32 +36,32 @@ import java.io.InputStream;
 
 public class FileStream extends Stream {
 
-	private final File file;
+    private final File file;
 
-	private InputStream is; // Lazy
+    private InputStream is; // Lazy
 
-	public FileStream(final File file) {
-		if (file == null) {
-			throw new IllegalArgumentException("File can't be null");
-		}
+    public FileStream(final File file) {
+        if (file == null) {
+            throw new IllegalArgumentException("File can't be null");
+        }
 
-		this.file = file;
-	}
+        this.file = file;
+    }
 
-	@Override
-	public InputStream getInputStream() throws IOException {
-		if (is == null) {
-			is = new FileInputStream(file);
-		}
-		return is;
-	}
+    @Override
+    public InputStream getInputStream() throws IOException {
+        if (is == null) {
+            is = new FileInputStream(file);
+        }
+        return is;
+    }
 
-	@Override
-	public void close() throws IOException {
-		if (is != null) {
-			is.close();
-			is = null;
-		}
-	}
+    @Override
+    public void close() throws IOException {
+        if (is != null) {
+            is.close();
+            is = null;
+        }
+    }
 
 }
