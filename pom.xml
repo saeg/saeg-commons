@@ -6,6 +6,7 @@
 	<name>saeg-commons</name>
 	<url>https://github.com/saeg/saeg-commons</url>
 	<description>common utility methods</description>
+	<inceptionYear>2014</inceptionYear>
 
 	<scm>
 		<url>https://github.com/saeg/saeg-commons</url>
@@ -56,6 +57,27 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<version>2.4.2</version>
 			</plugin>
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<header>LICENSE-TEMPLATE.txt</header>
+					<properties>
+						<owner>University of Sao Paulo</owner>
+					</properties>
+					<excludes>
+						<exclude>pom.xml</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -67,4 +89,5 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
 </project>
