@@ -34,6 +34,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -68,7 +69,7 @@ public final class Files {
         return output.toByteArray();
     }
 
-    private static void copy(final InputStream input, final ByteArrayOutputStream output)
+    public static void copy(final InputStream input, final OutputStream output)
             throws IOException {
 
         final byte[] buffer = new byte[BUFFER_SIZE];
