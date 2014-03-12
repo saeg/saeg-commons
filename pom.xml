@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>br.usp.each.saeg</groupId>
 	<artifactId>saeg-commons</artifactId>
-	<version>0.0.3</version>
+	<version>0.0.4-SNAPSHOT</version>
 	<name>saeg-commons</name>
 	<url>https://github.com/saeg/saeg-commons</url>
 	<description>common utility methods</description>
@@ -12,7 +12,7 @@
 		<url>https://github.com/saeg/saeg-commons</url>
 		<connection>scm:git:https://github.com/saeg/saeg-commons.git</connection>
 		<developerConnection>scm:git:git@github.com:saeg/saeg-commons.git</developerConnection>
-		<tag>saeg-commons-0.0.3</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
