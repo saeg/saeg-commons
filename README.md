@@ -2,3 +2,5 @@ saeg-commons [![Build Status](https://travis-ci.org/saeg/saeg-commons.svg?branch
 ============
 
 common utility methods
+
+! If you need to install *saeg-commons* version 0.0.3 or earlier in your local repository, use JDK 7 or skip tests. There is a bug when compiling test classes with JDK 6. !
