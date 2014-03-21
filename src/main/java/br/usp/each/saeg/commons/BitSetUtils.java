@@ -81,6 +81,10 @@ public final class BitSetUtils {
         return array;
     }
 
+    public static BitSet valueOf(final int value) {
+        return valueOf(new int[] { value });
+    }
+
     public static BitSet valueOf(final int... values) {
         final BitSet bits = new BitSet(values.length * 32);
         for (int i = 0; i < values.length; i++) {
@@ -95,6 +99,10 @@ public final class BitSetUtils {
             }
         }
         return bits;
+    }
+
+    public static BitSet valueOf(final long value) {
+        return valueOf(new long[] { value });
     }
 
     public static BitSet valueOf(final long... values) {
