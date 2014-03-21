@@ -1,5 +1,5 @@
 /**
- * saeg-commons: common utility methods 
+ * saeg-commons: common utility methods
  * Copyright (c) 2014 University of Sao Paulo
  * All rights reserved.
  *
@@ -29,29 +29,31 @@
  */
 package br.usp.each.saeg.commons;
 
-public class ArrayUtils {
+import org.junit.Assert;
+import org.junit.Test;
 
-    private ArrayUtils() {
-        // No instances
+public class ArrayUtilsTest {
+
+    @Test
+    public void testIndexOf() {
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new Integer[] {}, new Object()));
+        Assert.assertEquals(0, ArrayUtils.indexOf(new Integer[] { 0 }, 0));
+        Assert.assertEquals(1, ArrayUtils.indexOf(new Integer[] { 0, 1 }, 1));
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new Integer[] { 0, 1 }, 2));
     }
 
-    public static <T> int indexOf(final T[] array, final Object object) {
-        if (object == null) {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i] == null)
-                    return i;
-            }
-        } else {
-            for (int i = 0; i < array.length; i++) {
-                if (array[i].equals(object))
-                    return i;
-            }
-        }
-        return -1;
+    @Test
+    public void testIndexOfAcceptNulls() {
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new Integer[] {}, null));
+        Assert.assertEquals(0, ArrayUtils.indexOf(new Integer[] { null }, null));
+        Assert.assertEquals(1, ArrayUtils.indexOf(new Integer[] { 0, null }, null));
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new Integer[] { 0, 1 }, null));
     }
 
-    public static <T> boolean contains(final T[] array, final Object object) {
-        return indexOf(array, object) != -1;
+    @Test
+    public void testContains() {
+        Assert.assertTrue(ArrayUtils.contains(new Integer[] { 0, 1 }, 1));
+        Assert.assertFalse(ArrayUtils.contains(new Integer[] { 0, 1 }, 2));
     }
 
 }
