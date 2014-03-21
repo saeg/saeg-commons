@@ -37,11 +37,17 @@ import org.junit.Test;
 
 public class TestStreamsShould {
 
-    private String fileName;
+    private String extFileName;
+
+    private String jarFileName;
+
+    private String zipFileName;
 
     @Before
     public void setUp() {
-        fileName = getClass().getResource("file.jar").getFile();
+        extFileName = getClass().getResource("file.ext").getFile();
+        jarFileName = getClass().getResource("file.jar").getFile();
+        zipFileName = getClass().getResource("file.zip").getFile();
     }
 
     @Test
@@ -57,7 +63,9 @@ public class TestStreamsShould {
 
     @Test
     public void ReturnAListWithOneElementWhenFileNameBelongsToAFile() {
-        Assert.assertTrue(streams(fileName, ".jar") == 1);
+        Assert.assertTrue(streams(extFileName, ".ext") == 1);
+        Assert.assertTrue(streams(jarFileName, ".jar") == 1);
+        Assert.assertTrue(streams(zipFileName, ".zip") == 1);
     }
 
     @Test
@@ -72,7 +80,8 @@ public class TestStreamsShould {
 
     @Test
     public void ReturnAListWithAllFilesFromAZipFile() {
-        Assert.assertTrue(streams(fileName, ".ext") == 1);
+        Assert.assertTrue(streams(jarFileName, ".ext") == 1);
+        Assert.assertTrue(streams(zipFileName, ".ext") == 1);
     }
 
     private static int streams(final String fileName, final String ext) {

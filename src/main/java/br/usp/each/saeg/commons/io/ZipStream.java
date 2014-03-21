@@ -51,8 +51,8 @@ public class ZipStream extends Stream {
         this.zipEntry = zipFile.getEntry(zipEntryName);
 
         if (zipEntry == null) {
-            throw new IllegalStateException(String.format("%s was not found in ZipFile",
-                    zipEntryName));
+            throw new IllegalStateException(String.format(
+                    "%s was not found in ZipFile", zipEntryName));
         }
     }
 

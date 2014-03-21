@@ -120,8 +120,7 @@ public class Streams {
         } else {
 
             if (!this.fileName.endsWith(ext)) {
-                throw new IllegalArgumentException("The file extension must be .jar, .zip or "
-                        + ext);
+                throw new IllegalArgumentException("The file extension must be .jar, .zip or " + ext);
             }
 
         }

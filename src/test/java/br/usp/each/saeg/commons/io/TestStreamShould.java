@@ -31,8 +31,10 @@ package br.usp.each.saeg.commons.io;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.jar.JarFile;
 
+import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -41,9 +43,22 @@ public class TestStreamShould {
 
     private File file;
 
+    private Stream stream;
+
     @Before
     public void setUp() {
         file = new File(getClass().getResource("file.jar").getFile());
+    }
+
+    @After
+    public void tearDown() {
+        if (stream != null) {
+            try {
+                stream.close();
+            } catch (final IOException ignore) {
+                /* ignore exceptions */
+            }
+        }
     }
 
     @Test
@@ -81,28 +96,48 @@ public class TestStreamShould {
 
     @Test
     public void GetBytesFromAFileCorrectly() throws IOException {
-        Stream stream = null;
-        try {
-            stream = new FileStream(file);
-            Assert.assertNotNull(stream.getBytes());
-        } catch (final Exception e) {
-            Assert.fail(e.getMessage());
-        } finally {
-            stream.close();
-        }
+        Assert.assertNotNull(fileStream().getBytes());
     }
 
     @Test
     public void GetBytesFromAZipFileCorrectly() throws IOException {
-        Stream stream = null;
-        try {
-            stream = new ZipStream(new JarFile(file), "file.ext");
-            Assert.assertNotNull(stream.getBytes());
-        } catch (final Exception e) {
-            Assert.fail(e.getMessage());
-        } finally {
-            stream.close();
-        }
+        Assert.assertNotNull(zipStream().getBytes());
+    }
+
+    @Test
+    public void ReturnAInputStreamFromAFile() throws IOException {
+        Assert.assertNotNull(fileStream().getInputStream());
+    }
+
+    @Test
+    public void ReturnAInputStreamFromAZipFile() throws IOException {
+        Assert.assertNotNull(zipStream().getInputStream());
+    }
+
+    @Test
+    public void ReturnTheSameInputStreamFromAFile() throws IOException {
+        final InputStream expected = fileStream().getInputStream();
+        Assert.assertSame(expected, stream.getInputStream());
+    }
+
+    @Test
+    public void ReturnTheSameInputStreamFromAZipFile() throws IOException {
+        final InputStream expected = zipStream().getInputStream();
+        Assert.assertSame(expected, stream.getInputStream());
+    }
+
+    // --- auxiliary methods
+
+    private ZipStream zipStream() throws IOException {
+        final ZipStream zs = new ZipStream(new JarFile(file), "file.ext");
+        stream = zs;
+        return zs;
+    }
+
+    private FileStream fileStream() {
+        final FileStream fs = new FileStream(file);
+        stream = fs;
+        return fs;
     }
 
 }
