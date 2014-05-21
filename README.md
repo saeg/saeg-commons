@@ -1,4 +1,4 @@
-saeg-commons [![Build Status](https://travis-ci.org/saeg/saeg-commons.svg?branch=master)](https://travis-ci.org/saeg/saeg-commons)
+saeg-commons [![Build Status](https://travis-ci.org/saeg/saeg-commons.svg?branch=master)](https://travis-ci.org/saeg/saeg-commons) [![Coverage Status](https://coveralls.io/repos/saeg/saeg-commons/badge.png)](https://coveralls.io/r/saeg/saeg-commons)
 ============
 
 common utility methods
