@@ -51,6 +51,12 @@ public class ArrayUtilsTest {
     }
 
     @Test
+    public void testIndexOfShouldNotThrowNPEWhenArrayContainsNulls() {
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new Integer[] { null }, 0));
+        Assert.assertEquals(1, ArrayUtils.indexOf(new Integer[] { null, 1 }, 1));
+    }
+
+    @Test
     public void testContains() {
         Assert.assertTrue(ArrayUtils.contains(new Integer[] { 0, 1 }, 1));
         Assert.assertFalse(ArrayUtils.contains(new Integer[] { 0, 1 }, 2));

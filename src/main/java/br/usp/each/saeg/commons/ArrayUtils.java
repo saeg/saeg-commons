@@ -43,7 +43,7 @@ public class ArrayUtils {
             }
         } else {
             for (int i = 0; i < array.length; i++) {
-                if (array[i].equals(object))
+                if (object.equals(array[i]))
                     return i;
             }
         }
