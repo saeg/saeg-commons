@@ -1,5 +1,5 @@
 /**
- * saeg-commons: common utility methods 
+ * saeg-commons: common utility methods
  * Copyright (c) 2014 University of Sao Paulo
  * All rights reserved.
  *

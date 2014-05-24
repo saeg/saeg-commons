@@ -1,4 +1,4 @@
-${project.name}: ${project.description} 
+${project.name}: ${project.description}
 Copyright (c) ${project.inceptionYear} ${owner}
 All rights reserved.
 
