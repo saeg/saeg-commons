@@ -43,7 +43,7 @@ public class ObjectInvocationTest extends AbstractTest {
     }
 
     @Test
-    public void CallMethodWithoutArgsCorrectly() {
+    public void testCall() {
         assertEquals(42, new ObjectInvocation(this, getMethod("answer")).call());
     }
 
