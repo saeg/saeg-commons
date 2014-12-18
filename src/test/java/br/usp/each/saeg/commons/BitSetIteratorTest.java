@@ -101,4 +101,14 @@ public class BitSetIteratorTest {
         Assert.assertEquals(3, it.next());
     }
 
+    @Test
+    public void testSize() {
+        final BitSet bs = new BitSet();
+        Assert.assertEquals(0, new BitSetIterator(bs).size());
+        bs.set(4);
+        Assert.assertEquals(1, new BitSetIterator(bs).size());
+        bs.set(2);
+        Assert.assertEquals(2, new BitSetIterator(bs).size());
+    }
+
 }

@@ -54,7 +54,7 @@ public class Streams {
 
     /**
      * Constructor
-     * 
+     *
      * @param fileName
      *            the file from witch the List of Stream will be generated
      * @param ext
@@ -73,7 +73,7 @@ public class Streams {
 
     /**
      * Generates the List of Stream from the file
-     * 
+     *
      * @return the List of Stream created
      * @throws IOException
      *             if an I/O error has occurred
@@ -120,7 +120,7 @@ public class Streams {
         } else {
 
             if (!this.fileName.endsWith(ext)) {
-                throw new IllegalArgumentException("The file extension must be .jar, .zip or " + ext);
+                throw new IllegalStateException("The file extension must be .jar, .zip or " + ext);
             }
 
         }

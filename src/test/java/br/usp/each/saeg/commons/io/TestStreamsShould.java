@@ -62,6 +62,19 @@ public class TestStreamsShould {
     }
 
     @Test
+    public void ThrowAnExceptionWhenFileExtensionDoesNotBelongToAFile() {
+        Exception exception = null;
+        try {
+            new Streams(extFileName, ".txt").get();
+        } catch (final IllegalStateException e) {
+            exception = e;
+        } catch (final Exception e) {
+            Assert.fail("Should not happen");
+        }
+        Assert.assertNotNull(exception);
+    }
+
+    @Test
     public void ReturnAListWithOneElementWhenFileNameBelongsToAFile() {
         Assert.assertTrue(streams(extFileName, ".ext") == 1);
         Assert.assertTrue(streams(jarFileName, ".jar") == 1);
