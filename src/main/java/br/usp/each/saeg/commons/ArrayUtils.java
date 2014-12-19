@@ -128,6 +128,38 @@ public class ArrayUtils {
         return indexOf(array, object) != -1;
     }
 
+    public static boolean contains(final byte[] array, final byte element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final short[] array, final short element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final int[] array, final int element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final long[] array, final long element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final float[] array, final float element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final double[] array, final double element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final boolean[] array, final boolean element) {
+        return indexOf(array, element) != -1;
+    }
+
+    public static boolean contains(final char[] array, final char element) {
+        return indexOf(array, element) != -1;
+    }
+
     public static void merge(
             final Object dest, final int destPos,
             final Object array1, final int srcPos1, final int length1,

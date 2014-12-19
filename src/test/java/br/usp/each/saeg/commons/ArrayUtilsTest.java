@@ -127,6 +127,54 @@ public class ArrayUtilsTest {
     }
 
     @Test
+    public void testContainsByte() {
+        Assert.assertTrue(ArrayUtils.contains(new byte[] { 0, 1 }, (byte) 1));
+        Assert.assertFalse(ArrayUtils.contains(new byte[] { 0, 1 }, (byte) 2));
+    }
+
+    @Test
+    public void testContainsShort() {
+        Assert.assertTrue(ArrayUtils.contains(new short[] { 0, 1 }, (short) 1));
+        Assert.assertFalse(ArrayUtils.contains(new short[] { 0, 1 }, (short) 2));
+    }
+
+    @Test
+    public void testContainsInt() {
+        Assert.assertTrue(ArrayUtils.contains(new int[] { 0, 1 }, 1));
+        Assert.assertFalse(ArrayUtils.contains(new int[] { 0, 1 }, 2));
+    }
+
+    @Test
+    public void testContainsLong() {
+        Assert.assertTrue(ArrayUtils.contains(new long[] { 0L, 1L }, 1L));
+        Assert.assertFalse(ArrayUtils.contains(new long[] { 0L, 1L }, 2L));
+    }
+
+    @Test
+    public void testContainsFloat() {
+        Assert.assertTrue(ArrayUtils.contains(new float[] { 0.0f, 1.0f }, 1.0f));
+        Assert.assertFalse(ArrayUtils.contains(new float[] { 0.0f, 1.0f }, 2.0f));
+    }
+
+    @Test
+    public void testContainsDouble() {
+        Assert.assertTrue(ArrayUtils.contains(new double[] { 0.0d, 1.0d }, 1.0d));
+        Assert.assertFalse(ArrayUtils.contains(new double[] { 0.0d, 1.0d }, 2.0d));
+    }
+
+    @Test
+    public void testContainsBoolean() {
+        Assert.assertTrue(ArrayUtils.contains(new boolean[] { true, false }, false));
+        Assert.assertFalse(ArrayUtils.contains(new boolean[] { false, false }, true));
+    }
+
+    @Test
+    public void testContainsChar() {
+        Assert.assertTrue(ArrayUtils.contains(new char[] { 'a', 'b' }, 'a'));
+        Assert.assertFalse(ArrayUtils.contains(new char[] { 'a', 'b' }, 'c'));
+    }
+
+    @Test
     public void testMerge() {
         Assert.assertSame(Integer[].class, ArrayUtils.merge(new Integer[0]).getClass());
 
