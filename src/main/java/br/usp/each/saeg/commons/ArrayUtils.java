@@ -29,6 +29,8 @@
  */
 package br.usp.each.saeg.commons;
 
+import java.util.Arrays;
+
 public class ArrayUtils {
 
     private ArrayUtils() {
@@ -124,6 +126,194 @@ public class ArrayUtils {
 
     public static <T> boolean contains(final T[] array, final Object object) {
         return indexOf(array, object) != -1;
+    }
+
+    public static void merge(
+            final Object dest, final int destPos,
+            final Object array1, final int srcPos1, final int length1,
+            final Object array2, final int srcPos2, final int length2) {
+        System.arraycopy(array1, srcPos1, dest, destPos, length1);
+        System.arraycopy(array2, srcPos2, dest, destPos + length1, length2);
+    }
+
+    public static <T> T[] merge(final T[] array1, final T[] array2) {
+        final T[] result = Arrays.copyOf(array1, array1.length + array2.length);
+        System.arraycopy(array2, 0, result, array1.length, array2.length);
+        return result;
+    }
+
+    public static byte[] merge(final byte[] array1, final byte[] array2) {
+        final byte[] result = new byte[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static short[] merge(final short[] array1, final short[] array2) {
+        final short[] result = new short[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static int[] merge(final int[] array1, final int[] array2) {
+        final int[] result = new int[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static long[] merge(final long[] array1, final long[] array2) {
+        final long[] result = new long[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static float[] merge(final float[] array1, final float[] array2) {
+        final float[] result = new float[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static double[] merge(final double[] array1, final double[] array2) {
+        final double[] result = new double[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static boolean[] merge(final boolean[] array1, final boolean[] array2) {
+        final boolean[] result = new boolean[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static char[] merge(final char[] array1, final char[] array2) {
+        final char[] result = new char[array1.length + array2.length];
+        merge(result, 0, array1, 0, array1.length, array2, 0, array2.length);
+        return result;
+    }
+
+    public static <T> T[] merge(final T[] first, final T[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final T[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static byte[] merge(final byte[] first, final byte[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final byte[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static short[] merge(final short[] first, final short[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final short[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static int[] merge(final int[] first, final int[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final int[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static long[] merge(final long[] first, final long[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final long[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static float[] merge(final float[] first, final float[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final float[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static double[] merge(final double[] first, final double[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final double[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static boolean[] merge(final boolean[] first, final boolean[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final boolean[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
+    }
+
+    public static char[] merge(final char[] first, final char[]... arrays) {
+        int length = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            length = length + arrays[i].length;
+        }
+        final char[] result = Arrays.copyOf(first, length);
+        int offset = first.length;
+        for (int i = 0; i < arrays.length; i++) {
+            System.arraycopy(arrays[i], 0, result, offset, arrays[i].length);
+            offset += arrays[i].length;
+        }
+        return result;
     }
 
 }

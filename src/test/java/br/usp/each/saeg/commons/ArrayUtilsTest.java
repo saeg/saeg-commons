@@ -69,9 +69,9 @@ public class ArrayUtilsTest {
     @Test
     public void testIndexOfLong() {
         Assert.assertEquals(-1, ArrayUtils.indexOf(new long[] {}, 0L));
-        Assert.assertEquals(0, ArrayUtils.indexOf(new long[] { 0 }, 0L));
-        Assert.assertEquals(1, ArrayUtils.indexOf(new long[] { 0, 1 }, 1L));
-        Assert.assertEquals(-1, ArrayUtils.indexOf(new long[] { 0, 1 }, 2L));
+        Assert.assertEquals(0, ArrayUtils.indexOf(new long[] { 0L }, 0L));
+        Assert.assertEquals(1, ArrayUtils.indexOf(new long[] { 0L, 1L }, 1L));
+        Assert.assertEquals(-1, ArrayUtils.indexOf(new long[] { 0L, 1L }, 2L));
     }
 
     @Test
@@ -124,6 +124,105 @@ public class ArrayUtilsTest {
     public void testContains() {
         Assert.assertTrue(ArrayUtils.contains(new Integer[] { 0, 1 }, 1));
         Assert.assertFalse(ArrayUtils.contains(new Integer[] { 0, 1 }, 2));
+    }
+
+    @Test
+    public void testMerge() {
+        Assert.assertSame(Integer[].class, ArrayUtils.merge(new Integer[0]).getClass());
+
+        Assert.assertArrayEquals(new Integer[] { 1, 2, 3, 4 },
+                ArrayUtils.merge(new Integer[] { 1, 2 }, new Integer[] { 3, 4 }));
+
+        Assert.assertArrayEquals(new Integer[] { 1, 2, 3 },
+                ArrayUtils.merge(new Integer[] { 1 }, new Integer[] { 2 }, new Integer[] { 3 }));
+    }
+
+    @Test
+    public void testMergeByte() {
+        Assert.assertSame(byte[].class, ArrayUtils.merge(new byte[0]).getClass());
+
+        Assert.assertArrayEquals(new byte[] { 1, 2, 3, 4 },
+                ArrayUtils.merge(new byte[] { 1, 2 }, new byte[] { 3, 4 }));
+
+        Assert.assertArrayEquals(new byte[] { 1, 2, 3 },
+                ArrayUtils.merge(new byte[] { 1 }, new byte[] { 2 }, new byte[] { 3 }));
+    }
+
+    @Test
+    public void testMergeShort() {
+        Assert.assertSame(short[].class, ArrayUtils.merge(new short[0]).getClass());
+
+        Assert.assertArrayEquals(new short[] { 1, 2, 3, 4 },
+                ArrayUtils.merge(new short[] { 1, 2 }, new short[] { 3, 4 }));
+
+        Assert.assertArrayEquals(new short[] { 1, 2, 3 },
+                ArrayUtils.merge(new short[] { 1 }, new short[] { 2 }, new short[] { 3 }));
+    }
+
+    @Test
+    public void testMergeInt() {
+        Assert.assertSame(int[].class, ArrayUtils.merge(new int[0]).getClass());
+
+        Assert.assertArrayEquals(new int[] { 1, 2, 3, 4 },
+                ArrayUtils.merge(new int[] { 1, 2 }, new int[] { 3, 4 }));
+
+        Assert.assertArrayEquals(new int[] { 1, 2, 3 },
+                ArrayUtils.merge(new int[] { 1 }, new int[] { 2 }, new int[] { 3 }));
+    }
+
+    @Test
+    public void testMergeLong() {
+        Assert.assertSame(long[].class, ArrayUtils.merge(new long[0]).getClass());
+
+        Assert.assertArrayEquals(new long[] { 1L, 2L, 3L, 4L },
+                ArrayUtils.merge(new long[] { 1L, 2L }, new long[] { 3L, 4L }));
+
+        Assert.assertArrayEquals(new long[] { 1L, 2L, 3L },
+                ArrayUtils.merge(new long[] { 1L }, new long[] { 2L }, new long[] { 3L }));
+    }
+
+    @Test
+    public void testMergeFloat() {
+        Assert.assertSame(float[].class, ArrayUtils.merge(new float[0]).getClass());
+
+        Assert.assertArrayEquals(new float[] { 1.0f, 2.0f, 3.0f, 4.0f },
+                ArrayUtils.merge(new float[] { 1.0f, 2.0f }, new float[] { 3.0f, 4.0f }), 0.0f);
+
+        Assert.assertArrayEquals(new float[] { 1.0f, 2.0f, 3.0f },
+                ArrayUtils.merge(new float[] { 1.0f }, new float[] { 2.0f }, new float[] { 3.0f }), 0.0f);
+    }
+
+    @Test
+    public void testMergeDouble() {
+        Assert.assertSame(double[].class, ArrayUtils.merge(new double[0]).getClass());
+
+        Assert.assertArrayEquals(new double[] { 1.0d, 2.0d, 3.0d, 4.0d },
+                ArrayUtils.merge(new double[] { 1.0d, 2.0d }, new double[] { 3.0d, 4.0d }), 0.0d);
+
+        Assert.assertArrayEquals(new double[] { 1.0d, 2.0d, 3.0d },
+                ArrayUtils.merge(new double[] { 1.0d }, new double[] { 2.0d }, new double[] { 3.0d }), 0.0d);
+    }
+
+    @Test
+    public void testMergeBoolean() {
+        Assert.assertSame(boolean[].class, ArrayUtils.merge(new boolean[0]).getClass());
+
+        Assert.assertArrayEquals(new boolean[] { false, true, true, false },
+                ArrayUtils.merge(new boolean[] { false, true }, new boolean[] { true, false }));
+
+        Assert.assertArrayEquals(new boolean[] { true, false, true },
+                ArrayUtils.merge(new boolean[] { true }, new boolean[] { false }, new boolean[] { true }));
+    }
+
+    @Test
+    public void testMergeChar() {
+        Assert.assertSame(char[].class, ArrayUtils.merge(new char[0]).getClass());
+
+        Assert.assertArrayEquals(new char[] { 'a', 'b', 'c', 'd' },
+                ArrayUtils.merge(new char[] { 'a', 'b' }, new char[] { 'c', 'd' }));
+
+        Assert.assertArrayEquals(new char[] { 'a', 'b', 'c' },
+                ArrayUtils.merge(new char[] { 'a' }, new char[] { 'b' }, new char[] { 'c' }));
     }
 
 }
