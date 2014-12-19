@@ -35,7 +35,7 @@ public class ArrayUtils {
         // No instances
     }
 
-    public static <T> int indexOf(final T[] array, final Object object) {
+    public static <T> int indexOf(final T[] array, final T object) {
         if (object == null) {
             for (int i = 0; i < array.length; i++) {
                 if (array[i] == null)
@@ -45,6 +45,78 @@ public class ArrayUtils {
             for (int i = 0; i < array.length; i++) {
                 if (object.equals(array[i]))
                     return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final byte[] array, final byte element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final short[] array, final short element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final int[] array, final int element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final long[] array, final long element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final float[] array, final float element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final double[] array, final double element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final boolean[] array, final boolean element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static int indexOf(final char[] array, final char element) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == element) {
+                return i;
             }
         }
         return -1;
