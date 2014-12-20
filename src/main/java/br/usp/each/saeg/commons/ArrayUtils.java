@@ -30,6 +30,8 @@
 package br.usp.each.saeg.commons;
 
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
 
 public class ArrayUtils {
 
@@ -346,6 +348,102 @@ public class ArrayUtils {
             offset += arrays[i].length;
         }
         return result;
+    }
+
+    public static byte[] toArray(final Collection<Byte> coll, byte[] array) {
+        if (array.length < coll.size()) {
+            array = new byte[coll.size()];
+        }
+        final Iterator<Byte> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().byteValue();
+        }
+        return array;
+    }
+
+    public static short[] toArray(final Collection<Short> coll, short[] array) {
+        if (array.length < coll.size()) {
+            array = new short[coll.size()];
+        }
+        final Iterator<Short> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().shortValue();
+        }
+        return array;
+    }
+
+    public static int[] toArray(final Collection<Integer> coll, int[] array) {
+        if (array.length < coll.size()) {
+            array = new int[coll.size()];
+        }
+        final Iterator<Integer> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().intValue();
+        }
+        return array;
+    }
+
+    public static long[] toArray(final Collection<Long> coll, long[] array) {
+        if (array.length < coll.size()) {
+            array = new long[coll.size()];
+        }
+        final Iterator<Long> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().longValue();
+        }
+        return array;
+    }
+
+    public static float[] toArray(final Collection<Float> coll, float[] array) {
+        if (array.length < coll.size()) {
+            array = new float[coll.size()];
+        }
+        final Iterator<Float> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().floatValue();
+        }
+        return array;
+    }
+
+    public static double[] toArray(final Collection<Double> coll, double[] array) {
+        if (array.length < coll.size()) {
+            array = new double[coll.size()];
+        }
+        final Iterator<Double> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().doubleValue();
+        }
+        return array;
+    }
+
+    public static boolean[] toArray(final Collection<Boolean> coll, boolean[] array) {
+        if (array.length < coll.size()) {
+            array = new boolean[coll.size()];
+        }
+        final Iterator<Boolean> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().booleanValue();
+        }
+        return array;
+    }
+
+    public static char[] toArray(final Collection<Character> coll, char[] array) {
+        if (array.length < coll.size()) {
+            array = new char[coll.size()];
+        }
+        final Iterator<Character> it = coll.iterator();
+        int i = 0;
+        while (it.hasNext()) {
+            array[i++] = it.next().charValue();
+        }
+        return array;
     }
 
 }

@@ -29,6 +29,9 @@
  */
 package br.usp.each.saeg.commons;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -271,6 +274,86 @@ public class ArrayUtilsTest {
 
         Assert.assertArrayEquals(new char[] { 'a', 'b', 'c' },
                 ArrayUtils.merge(new char[] { 'a' }, new char[] { 'b' }, new char[] { 'c' }));
+    }
+
+    @Test
+    public void testToArrayByte() {
+        final Collection<Byte> bytes = new ArrayList<Byte>();
+        bytes.add((byte) 0xa);
+        bytes.add((byte) 0xb);
+        bytes.add((byte) 0xc);
+        Assert.assertArrayEquals(new byte[] { 0xa, 0xb, 0xc }, ArrayUtils.toArray(bytes, new byte[0]));
+        Assert.assertArrayEquals(new byte[] { 0xa, 0xb, 0xc }, ArrayUtils.toArray(bytes, new byte[3]));
+    }
+
+    @Test
+    public void testToArrayShort() {
+        final Collection<Short> shorts = new ArrayList<Short>();
+        shorts.add((short) 0xaa);
+        shorts.add((short) 0xbb);
+        shorts.add((short) 0xcc);
+        Assert.assertArrayEquals(new short[] { 0xaa, 0xbb, 0xcc }, ArrayUtils.toArray(shorts, new short[0]));
+        Assert.assertArrayEquals(new short[] { 0xaa, 0xbb, 0xcc }, ArrayUtils.toArray(shorts, new short[3]));
+    }
+
+    @Test
+    public void testToArrayInt() {
+        final Collection<Integer> ints = new ArrayList<Integer>();
+        ints.add(0);
+        ints.add(1);
+        ints.add(2);
+        Assert.assertArrayEquals(new int[] { 0, 1, 2 }, ArrayUtils.toArray(ints, new int[0]));
+        Assert.assertArrayEquals(new int[] { 0, 1, 2 }, ArrayUtils.toArray(ints, new int[3]));
+    }
+
+    @Test
+    public void testToArrayLong() {
+        final Collection<Long> longs = new ArrayList<Long>();
+        longs.add(0L);
+        longs.add(1L);
+        longs.add(2L);
+        Assert.assertArrayEquals(new long[] { 0L, 1L, 2L }, ArrayUtils.toArray(longs, new long[0]));
+        Assert.assertArrayEquals(new long[] { 0L, 1L, 2L }, ArrayUtils.toArray(longs, new long[3]));
+    }
+
+    @Test
+    public void testToArrayFloat() {
+        final Collection<Float> floats = new ArrayList<Float>();
+        floats.add(1.1f);
+        floats.add(2.2f);
+        floats.add(3.3f);
+        Assert.assertArrayEquals(new float[] { 1.1f, 2.2f, 3.3f }, ArrayUtils.toArray(floats, new float[0]), 0.0f);
+        Assert.assertArrayEquals(new float[] { 1.1f, 2.2f, 3.3f }, ArrayUtils.toArray(floats, new float[3]), 0.0f);
+    }
+
+    @Test
+    public void testToArrayDouble() {
+        final Collection<Double> doubles = new ArrayList<Double>();
+        doubles.add(1.1d);
+        doubles.add(2.2d);
+        doubles.add(3.3d);
+        Assert.assertArrayEquals(new double[] { 1.1d, 2.2d, 3.3d }, ArrayUtils.toArray(doubles, new double[0]), 0.0d);
+        Assert.assertArrayEquals(new double[] { 1.1d, 2.2d, 3.3d }, ArrayUtils.toArray(doubles, new double[3]), 0.0d);
+    }
+
+    @Test
+    public void testToArrayBoolean() {
+        final Collection<Boolean> booleans = new ArrayList<Boolean>();
+        booleans.add(true);
+        booleans.add(false);
+        booleans.add(true);
+        Assert.assertArrayEquals(new boolean[] { true, false, true }, ArrayUtils.toArray(booleans, new boolean[0]));
+        Assert.assertArrayEquals(new boolean[] { true, false, true }, ArrayUtils.toArray(booleans, new boolean[3]));
+    }
+
+    @Test
+    public void testToArrayChar() {
+        final Collection<Character> characters = new ArrayList<Character>();
+        characters.add('a');
+        characters.add('b');
+        characters.add('c');
+        Assert.assertArrayEquals(new char[] { 'a', 'b', 'c' }, ArrayUtils.toArray(characters, new char[0]));
+        Assert.assertArrayEquals(new char[] { 'a', 'b', 'c' }, ArrayUtils.toArray(characters, new char[3]));
     }
 
 }
