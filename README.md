@@ -1,5 +1,8 @@
-saeg-commons [![Build Status](https://travis-ci.org/saeg/saeg-commons.svg?branch=master)](https://travis-ci.org/saeg/saeg-commons) [![Coverage Status](https://coveralls.io/repos/saeg/saeg-commons/badge.png)](https://coveralls.io/r/saeg/saeg-commons) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/br.usp.each.saeg/saeg-commons/badge.svg)](https://maven-badges.herokuapp.com/maven-central/br.usp.each.saeg/saeg-commons)
-============
+# saeg-commons
+
+[![Build Status](https://img.shields.io/travis/saeg/saeg-commons.svg?style=flat-square)](https://travis-ci.org/saeg/saeg-commons)
+[![Coverage Status](https://img.shields.io/coveralls/saeg/saeg-commons.svg?style=flat-square)](https://coveralls.io/r/saeg/saeg-commons)
+[![Maven Central](https://img.shields.io/maven-central/v/br.usp.each.saeg/saeg-commons.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/br.usp.each.saeg/saeg-commons)
 
 common utility methods
 
