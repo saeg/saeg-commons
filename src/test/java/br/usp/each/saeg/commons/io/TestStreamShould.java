@@ -62,6 +62,7 @@ public class TestStreamShould {
     }
 
     @Test
+    @SuppressWarnings("resource")
     public void ThrowAnExceptionWhenFileIsNull() {
         Exception exception = null;
         try {
@@ -73,6 +74,7 @@ public class TestStreamShould {
     }
 
     @Test
+    @SuppressWarnings("resource")
     public void ThrowAnExceptionWhenZipFileIsNull() {
         Exception exception = null;
         try {
@@ -84,6 +86,7 @@ public class TestStreamShould {
     }
 
     @Test
+    @SuppressWarnings("resource")
     public void ThrowAnExceptionWhenZipEntryNameDoesNotBelongToAZipFile() {
         Exception exception = null;
         try {
