@@ -1,6 +1,6 @@
 /**
  * saeg-commons: common utility methods
- * Copyright (c) 2014, 2015 University of Sao Paulo
+ * Copyright (c) 2014, 2016 University of Sao Paulo
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without

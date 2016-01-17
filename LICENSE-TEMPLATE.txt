@@ -1,5 +1,5 @@
 ${project.name}: ${project.description}
-Copyright (c) ${project.inceptionYear}, 2015 ${owner}
+Copyright (c) ${project.inceptionYear}, 2016 ${owner}
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
