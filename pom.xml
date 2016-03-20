@@ -10,6 +10,10 @@
 	<description>common utility methods</description>
 	<inceptionYear>2014</inceptionYear>
 
+	<organization>
+		<name>University of Sao Paulo</name>
+	</organization>
+
 	<licenses>
 		<license>
 			<name>The BSD 3-Clause License</name>
@@ -81,7 +85,7 @@
 				<configuration>
 					<header>LICENSE-TEMPLATE.txt</header>
 					<properties>
-						<owner>University of Sao Paulo</owner>
+						<owner>${project.organization.name}</owner>
 					</properties>
 					<excludes>
 						<exclude>pom.xml</exclude>
